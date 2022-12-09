@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Jason Washburn <jason.washburn@gmail.com>"]
+description = "An endpoint to create lowercase strings"
+name = "lowercase"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "lowercase"
+source = "target/wasm32-wasi/release/lowercase.wasm"
+[component.trigger]
+route = "/lowercase"
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
