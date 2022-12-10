@@ -1,14 +1,14 @@
 spin_version = "1"
 authors = ["Jason Washburn <jason.washburn@gmail.com>"]
 description = "Advent of Spin Challenge"
-name = "advent-of-spin-1"
+name = "advent-of-spin-2"
 trigger = { type = "http", base = "/" }
 version = "0.1.0"
 
 [[component]]
 id = "hello"
 source = "hello/target/wasm32-wasi/release/hello.wasm"
-allowed_http_hosts = ["127.0.0.1:3000"]
+allowed_http_hosts = ["insecure:allow-all"]
 [component.trigger]
 route = "/hello/..."
 [component.build]
